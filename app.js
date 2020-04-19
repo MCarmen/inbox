@@ -114,12 +114,8 @@ app.use((req, res, next) => {
 })
 
 app.post("/login", (req, res) => {
-  console.log("In post /login");
-  console.log(req.body);
   let account = req.body.account;
   let password = req.body.password;
-  console.log(account);
-  console.log(password);
   if(userDB[account] !== undefined && password == userDB[account]){
     req.session.account = account;
     res.redirect('/');
