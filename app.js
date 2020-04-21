@@ -85,10 +85,11 @@ mailServer.addMail(new Mail('nil@mydomain.com','mar@mydomain.com','By Mar', 'Thi
 
 const express = require('express')
 const session = require('express-session')
+const path = require('path')
 const app = express()
 const port = 3000
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
@@ -114,12 +115,8 @@ app.use((req, res, next) => {
 })
 
 app.post("/login", (req, res) => {
-  console.log("In post /login");
-  console.log(req.body);
   let account = req.body.account;
   let password = req.body.password;
-  console.log(account);
-  console.log(password);
   if(userDB[account] !== undefined && password == userDB[account]){
     req.session.account = account;
     res.redirect('/');
@@ -132,6 +129,7 @@ app.post("/login", (req, res) => {
 });
 
 //Begin routing
-
+app.get('/')
+app.get('/inbox')
 //creating an HTTP server.
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
