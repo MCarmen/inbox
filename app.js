@@ -129,7 +129,6 @@ app.post("/login", (req, res) => {
 });
 
 //Begin routing
-app.get('/')
-app.get('/inbox')
+
 //creating an HTTP server.
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
