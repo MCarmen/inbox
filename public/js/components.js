@@ -43,4 +43,4 @@ let options = {
 
   } //end methods
 } //end options
-new Vue(options);
+let vm = new Vue(options);
