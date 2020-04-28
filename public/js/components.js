@@ -37,7 +37,7 @@ let options = {
     displayMailForwarder: function(){
     },  //end displayMailComposer
 
-    displayMailReplyer: function(){
+    displayMailReplier: function(){
     },  //end displayMailComposer
 
 
