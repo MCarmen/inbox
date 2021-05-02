@@ -1,15 +1,16 @@
 
 //Creating the Vue object.
-let options = {
-  el: "#app",
-  data: {
-    pollingId: null,
+const rootComponent = {
+  data() {
+    return{
+      pollingId: null,
+    }
   },
 
-  created: function() {
+  mounted: function() {
   },
 
-  beforeDestroy: function() {
+  beforeUnmount: function() {
   },
 
   methods: {
@@ -19,7 +20,7 @@ let options = {
     deleteMail: function(){
     },
 
-    resetDisplayMailOption: function() {
+    resetDisplay: function() {
     },
 
     refreshMailList: function(){
@@ -27,20 +28,15 @@ let options = {
 
     initAddressBook: function(){
     }, //end initAddressBook
-
-    displayMailReader: function(){
-    },  //end displayMailReader
-
-    displayMailComposer: function(){
-    },  //end displayMailComposer
-
-    displayMailForwarder: function(){
-    },  //end displayMailComposer
-
-    displayMailReplier: function(){
-    },  //end displayMailComposer
-
-
-  } //end methods
+  }, //end methods
+  template:``
 } //end options
-let vm = new Vue(options);
+
+//==== mail-list==============================================================
+const mailListComponent = {
+  name: "mail-list",
+};
+
+const app = Vue.createApp(rootComponent);
+app.component('mail-list', mailListComponent);
+const vm = app.mount("#app");
