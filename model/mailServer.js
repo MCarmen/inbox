@@ -55,7 +55,7 @@ const mailServer = {
 
   /**
    * Returns an array with all the mailAddress handled by the mail server.
-   * example: ['pep@dom.com', 'mar@dom.com', 'nil@dom.com': '123']
+   * example: ['pep@dom.com', 'mar@dom.com', 'nil@dom.com']
    */
   getAddressBook: function(){
     let i = 0;
