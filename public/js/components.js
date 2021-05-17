@@ -4,6 +4,7 @@ const rootComponent = {
   data() {
     return{
       pollingId: null,
+      inbox: undefined,
     }
   },
 
